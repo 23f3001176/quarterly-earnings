@@ -1,1 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Reveal.js</title>
+
+  <!-- Reveal.js core (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css" id="theme">
+
+  <!-- Highlight.js for code highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/default.min.css">
+
+  <style>
+    /* small custom styling for the demo */
+    .email { position: absolute; right: 1rem; top: 1rem; font-size: 0.9rem; opacity: 0.85; }
+    .small { font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <p class="small">Interactive Reveal.js presentation for stakeholders</p>
+        <p class="email">Contact: 23f3001176@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Welcome slide. Introduce yourself, role as technical consultant and goals for the session.
+        </aside>
+      </section>
+
+      <!-- Markdown slide (uses markdown plugin) -->
+      <section data-markdown>
+        <textarea data-template>
+
+## Highlights — Q3
+
+- Revenue: **$45M** (YoY +8%).
+- Net Income: **$6.2M** (margin 13.8%).
+- Key wins:
+  1. New enterprise partnerships
+  2. Cost optimization in ops
+
+*Prepared by*: Technical Consulting Team
+
+        </textarea>
+        <aside class="notes">
+          Run through bullets concisely; point to the partnerships and cost savings as drivers of margin improvement.
+        </aside>
+      </section>
+
+      <!-- Slide with animated fragments -->
+      <section>
+        <h2>Revenue Drivers</h2>
+        <ul>
+          <li class="fragment">Product A — enterprise sales</li>
+          <li class="fragment">Product B — subscription upsell</li>
+          <li class="fragment">International expansion</li>
+        </ul>
+        <aside class="notes">
+          Reveal each item as you talk about it using fragments; pause after each to take questions.
+        </aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Sample: Load test result parsing (Python)</h2>
+        <pre><code class="language-python">import json
+
+with open('results.json') as f:
+    data = json.load(f)
+
+avg_latency = sum(item['latency'] for item in data) / len(data)
+print(f"Average latency: {avg_latency:.2f} ms")
+</code></pre>
+        <aside class="notes">
+          Use this slide to show the engineering approach to measuring performance, mention SLOs briefly.
+        </aside>
+      </section>
+
+      <!-- Math slide (financial formula) -->
+      <section>
+        <h2>Financial Formula</h2>
+        <p>Return on Equity (ROE):</p>
+        <p>\[ \mathrm{ROE} = \frac{\mathrm{Net\ Income}}{\mathrm{Shareholders'\ Equity}} \times 100\% \]</p>
+        <p class="small">Example: Net Income = $6.2M, Equity = $40M → ROE = 15.5%</p>
+        <aside class="notes">
+          Explain why ROE matters to investors and how our initiatives improved net income.
+        </aside>
+      </section>
+
+      <!-- Slide that mixes fragments and markdown formatting -->
+      <section>
+        <h2>Action Items</h2>
+        <ol>
+          <li class="fragment">Finalize cost baseline by Nov 30</li>
+          <li class="fragment">Begin pilot in APAC region</li>
+          <li class="fragment">Quarterly review cadence — align with finance</li>
+        </ol>
+        <aside class="notes">
+          Ask stakeholders to commit to timelines; note owners beside each item when discussing.
+        </aside>
+      </section>
+
+      <!-- Closing slide with next steps and contact -->
+      <section>
+        <h2>Next Steps & Contact</h2>
+        <p class="fragment">• Detailed deck and data export will be shared post-meeting.</p>
+        <p class="fragment">• For technical follow-ups: 23f3001176@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Thank attendees and open floor for questions.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.js"></script>
+
+  <!-- Highlight.js core -->
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/highlight.js"></script>
+
+  <!-- MathJax (for equations) -->
+  <script>
+    window.MathJax = {
+      tex: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      svg: {fontCache: 'global'}
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealNotes, RevealHighlight ],
+      slideNumber: true,
+      // enable markdown and code highlighting
+      highlight: {
+        // optional: set languages or leave auto-detection
+      }
+    });
+  </script>
+</body>
+</html>
 
